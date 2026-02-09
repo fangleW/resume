@@ -21,8 +21,9 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
+          registry-url: 'https://registry.npmjs.org'
       - name: Install
-        run: npm ci
+        run: npm ci --registry=https://registry.npmjs.org/
       - name: Build
         run: npm run build
       - name: Deploy to Vercel (Production)
